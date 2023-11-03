@@ -4,6 +4,9 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import CompanyLogin from './components/CompanyLogin/CompanyLogin';
 import UserLogin from './components/UserLogin/UserLogin';
 import LandingHeader from './components/LandingHeader/LandingHeader';
+import CompanyHomePage from './pages/CompanyHome/CompanyHomePage';
+import UserHomePage from './pages/UserHome/UserHomePage';
+
 
 
 function App() {
@@ -13,8 +16,10 @@ function App() {
       <LandingHeader />
         <Routes>
           <Route path='/' element={<LandingPage />}/>
-          <Route path='/login/business' element={<CompanyLogin />}/>
-          <Route path='/login/customer' element={<UserLogin />}/>
+          <Route path='/login/company' element={<CompanyLogin />}/>
+          <Route path='/login/user' element={<UserLogin />}/>
+          <Route path='/company/home' element={<CompanyHomePage />}/>
+          <Route path='/user/home' element={<UserHomePage/>}/>
         </Routes>
       </BrowserRouter>
     </>
