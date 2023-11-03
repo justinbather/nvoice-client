@@ -1,0 +1,11 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+
+.homepage{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}

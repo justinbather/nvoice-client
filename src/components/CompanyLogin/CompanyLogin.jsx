@@ -1,4 +1,5 @@
 import './CompanyLogin.scss';
+import { Link } from 'react-router-dom';
 
 const CompanyLogin = () => {
     return (

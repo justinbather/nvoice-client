@@ -9,8 +9,8 @@ const Landing = () => {
                 <h1 className='homepage__title'>Invoices are easier than ever.</h1>
                 <h3 className='homepage__subtitle'>Invoices shouldn't take up your day. There is always more to be done.</h3>
                 <div className="homepage__navigation">
-                    <Link to='login/business'><button className='homepage__button'>Corporate Login</button></Link>
-                    <Link to='login/customer'><button className="homepage__button">Shopper Login</button></Link>
+                    <Link to='login/company'><button className='homepage__button'>Corporate Login</button></Link>
+                    <Link to='login/user'><button className="homepage__button">Shopper Login</button></Link>
                 </div>
             </section>
 
