@@ -8,11 +8,8 @@ import CompanyHomePage from "./pages/CompanyHomePage/CompanyHomePage";
 import UserHomePage from "./pages/UserHomePage/UserHomePage";
 import { CompanyInvoicePage } from "./pages/CompanyInvoicePage/CompanyInvoicePage";
 
-
-
-  import CreateInvoicePage from "./pages/CreateInvoicePage/CreateInvoicePage";
+import CreateInvoicePage from "./pages/CreateInvoicePage/CreateInvoicePage";
 import UserInvoicePage from "./pages/UserInvoicePage/UserInvoicePage";
-
 
 function App() {
   return (
@@ -23,19 +20,19 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login/company" element={<CompanyLogin />} />
           <Route path="/login/user" element={<UserLogin />} />
-          {/* <Route path="/company/home" element={<CompanyHomePage />} /> */}
-          {/* <Route path="/user/home" element={<UserHomePage />} /> */}
+          <Route path="/company/home" element={<CompanyHomePage />} />
+          <Route path="/user/home" element={<UserHomePage />} />
           <Route
             path="/company/invoices/:invoiceId"
             element={<CompanyInvoicePage />}
           />
 
-          
-
-              <Route path="/company/create-invoice" element={<CreateInvoicePage />} />
+          <Route
+            path="/company/create-invoice"
+            element={<CreateInvoicePage />}
+          />
           <Route path="/company/invoices" />
           <Route path="/user/invoices/:invoiceId" element={UserInvoicePage} />
-
         </Routes>
       </BrowserRouter>
     </>
