@@ -1,6 +1,7 @@
 import "./Invoice.scss";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { BASE_URL } from "../../config/constants";
 
 export const UserInvoice = ({ isUser, invoice, total }) => {
   console.log(invoice);
@@ -57,9 +58,14 @@ export const UserInvoice = ({ isUser, invoice, total }) => {
           <p>Tax: {invoice.tax}%</p>
           <p>Total: ${total}</p>
           {isUser && (
-            <button className="invoice-container__payment-btn">
-              Pay Invoice
-            </button>
+            <form
+              action={`${BASE_URL}/create-checkout-session/${total}`}
+              method="POST"
+            >
+              <button type="submit" className="invoice-container__payment-btn">
+                Pay Invoice
+              </button>
+            </form>
           )}
         </div>
       </div>
