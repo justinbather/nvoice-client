@@ -1,0 +1,73 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+.invoice-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  &__info-cont {
+    border-radius: 1rem;
+
+    padding: 3rem;
+  }
+
+  &__details-cont {
+    width: 90%;
+    max-height: 50%;
+
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    border-radius: 5px;
+  }
+
+  &__line-item--heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  &__line-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    border: 1px solid $primary-blue;
+    border-radius: 5px;
+  }
+
+  &__details-title {
+    align-self: flex-start;
+    margin-left: 5rem;
+  }
+
+  &__payment {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    align-items: center;
+    gap: 2rem;
+    justify-content: flex-end;
+  }
+
+  &__payment-btn {
+    @include button-default;
+    font-weight: bold;
+    &:hover {
+      @include button-hover;
+    }
+  }
+}
