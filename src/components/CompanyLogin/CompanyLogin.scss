@@ -1,0 +1,64 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+
+.form__container{
+    height: 90vh;
+    padding: 0 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.corporate{
+    height: 70%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 1rem;
+
+    &__title{
+        @include header-font;
+        color: $primary-black;
+    }
+
+    &__section{
+        width: 80%;
+        height: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__input{
+        @include input-styles;
+        @include body-font;
+    }
+
+    &__submit{
+        @include button-default;
+        background-color: $primary-black;
+        @include medium-font;
+        width: 15rem;
+        height: 3rem;
+
+        &:hover{
+            @include button-hover;
+            background-color: $secondary-blue;
+            border: $primary-white 1px solid;
+        }
+    }
+
+    label{
+        @include medium-font;
+        color: $secondary-black;
+        line-height: 2rem;
+        min-width: 17rem;
+        text-align: start;
+    }
+}

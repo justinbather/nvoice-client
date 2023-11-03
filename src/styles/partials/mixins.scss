@@ -1,0 +1,70 @@
+@use '_typography' as *;
+@use 'variables' as *;
+
+// Fonts 
+@mixin header-font {
+    font-size: 2.75rem;
+    font-family: 'AR One Sans', sans-serif;
+    font-weight: 700;
+}
+
+@mixin subheader-font {
+    font-size: 2.25rem;
+    font-family: 'AR One Sans', sans-serif;
+    font-weight: 600;
+}
+
+@mixin body-font {
+    font-size: 0.90rem;
+    font-family: 'AR One Sans', sans-serif;
+    font-weight: 400;
+}
+
+@mixin medium-font {
+    font-size: 1.05rem;
+    font-family: 'AR One Sans', sans-serif;
+    font-weight: 500;
+}
+
+// Button styles
+@mixin button-default{
+    background-color: $primary-blue;
+    color: $primary-white;
+    @include body-font;
+    height: 2.5rem;
+    width: 9.375rem;
+    border-radius: 0.25rem;
+    border: none;
+    padding: 0 2rem;
+    text-align: center;
+    transition: 0.2s;
+}
+
+@mixin button-hover{
+    background-color: $primary-black;
+    color: $secondary-white;
+    cursor: pointer;
+}
+
+// Form Fields Styling
+    @mixin input-styles{
+        min-height: 2.5rem;
+        min-width: 15rem;
+        max-width: 100%;
+        border-radius: 0.25rem;
+        padding: 0 1rem;
+        margin: 0.25rem;
+        border: 1px solid $secondary-white;
+        background-color: $primary-background;
+        transition: 0.2s;
+    }
+
+    @mixin form-fields-active{
+        border: 2px solid $primary-blue;
+    }
+
+// Divider
+    @mixin page-divider{
+        border-bottom: 2px solid $primary-blue;
+    }
+

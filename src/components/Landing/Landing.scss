@@ -1,0 +1,63 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+
+.homepage{
+    height: 90vh;
+    width: 100%;
+    padding: 0 3.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__left{
+        width: 45%;
+        height: 80%;
+        padding: 3rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+    }
+
+        &__title{
+            @include header-font;
+            font-size: 3.5rem;
+            color: $primary-white;
+            text-transform: capitalize;
+        }
+
+        &__subtitle{
+            @include subheader-font;
+            font-size: 2rem;
+            color: $secondary-white;
+            max-width: 80%;
+        }
+
+    &__right{
+        width: 45%;
+        height: 70%;
+        padding: 3rem 0;
+    }
+
+    &__navigation{
+        width: 80%;
+        height: 25%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__button{
+        @include button-default;
+        @include subheader-font;
+        font-size: 1.25rem;
+        width: 15rem;
+        height: 4rem;
+        background-color: #1B6C89;
+
+        &:hover{
+            @include button-hover();
+        }
+    }
+}

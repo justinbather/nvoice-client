@@ -1,0 +1,41 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+
+.header{
+    padding: 0 3.75rem;
+    height: 10vh;
+    z-index: 1;
+    background: rgb(37,150,190);
+    background: linear-gradient(121deg, rgba(37,150,190,1) 50%, rgba(61,176,217,1) 50%);
+    backdrop-filter: blur(10px);
+    background-color: rgba(16, 0, 141, 0.1); 
+
+    &__nav{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        a{
+            text-decoration: none
+        }
+    }
+
+    &__logo{
+        @include header-font;
+        color: $primary-white;
+    }
+
+    &__button{
+        @include button-default;
+        background-color: #1B6C89;
+        @include medium-font;
+
+        &:hover{
+            @include button-hover;
+        }
+    }
+
+}

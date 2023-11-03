@@ -1,0 +1,21 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables.scss' as *;
+@use '../../styles/partials/mixins.scss' as *;
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.background {
+    background: rgb(37,150,190);
+    background: linear-gradient(121deg, rgba(37,150,190,1) 55%, rgba(61,176,217,1) 55%);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
