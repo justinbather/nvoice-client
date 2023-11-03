@@ -9,16 +9,28 @@ export const UserInvoice = ({ isUser, invoice, total }) => {
       <div className="invoice-container">
         <div className="invoice-container__row">
           <div className="invoice-container__info-cont">
-            <h3 className="invoice-container__company">Company Name</h3>
-            <p className="invoice-container__meta-info">company@email.com</p>
-            <p className="invoice-container__meta-info">123 test st</p>
-            <p className="invoice-container__meta-info">+122345584834</p>
+            <h3 className="invoice-container__company">
+              {invoice.company.name}
+            </h3>
+            <p className="invoice-container__meta-info">
+              {invoice.company.email}
+            </p>
+            <p className="invoice-container__meta-info">
+              {invoice.company.address}
+            </p>
+            <p className="invoice-container__meta-info">
+              {invoice.company.phoneNum}
+            </p>
           </div>
           <div className="invoice-container__info-cont">
-            <h3 className="invoice-container__company">Customer Name</h3>
-            <p className="invoice-container__meta-info">cutomer@email.com</p>
-            <p className="invoice-container__meta-info">123 test st</p>
-            <p className="invoice-container__meta-info">+122345584834</p>
+            <h3 className="invoice-container__company">{invoice.user.name}</h3>
+            <p className="invoice-container__meta-info">{invoice.user.email}</p>
+            <p className="invoice-container__meta-info">
+              {invoice.user.address}
+            </p>
+            <p className="invoice-container__meta-info">
+              {invoice.user.phoneNum}
+            </p>
           </div>
         </div>
 
@@ -44,9 +56,11 @@ export const UserInvoice = ({ isUser, invoice, total }) => {
         <div className="invoice-container__payment">
           <p>Tax: {invoice.tax}%</p>
           <p>Total: ${total}</p>
-          <button className="invoice-container__payment-btn">
-            Pay Invoice
-          </button>
+          {isUser && (
+            <button className="invoice-container__payment-btn">
+              Pay Invoice
+            </button>
+          )}
         </div>
       </div>
     </>
