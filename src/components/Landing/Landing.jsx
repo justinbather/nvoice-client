@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import credit from "../../styles/images/credit-cards.png";
 
 const Landing = () => {
+
   return (
     <div className="homepage">
       <section className="homepage__left">
@@ -17,6 +18,7 @@ const Landing = () => {
           <Link to="login/user">
             <button className="homepage__button">Shopper Login</button>
           </Link>
+
         </div>
       </section>
 

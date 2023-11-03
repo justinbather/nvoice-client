@@ -1,9 +1,10 @@
-import React from 'react';
+import './CompanyHomePage.scss';
+import CompanySideNav from '../../components/CompanySideNav/CompanySideNav';
 
 const CompanyHomePage = () => {
     return (
-        <div>
-            
+        <div className='homepage'>
+            <CompanySideNav />
         </div>
     );
 };
