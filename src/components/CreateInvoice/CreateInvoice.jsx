@@ -3,10 +3,12 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../config/constants";
+import { useNavigate } from "react-router-dom";
 
 const CreateInvoice = () => {
   const [custEmail, setCustEmail] = useState("");
   const [numLines, setNumLines] = useState(1);
+  const navigate = useNavigate();
 
   let defaultLineItems = [
     {
@@ -49,6 +51,9 @@ const CreateInvoice = () => {
           withCredentials: true,
         }
       );
+      if (response.status === 201) {
+        navigate("/company/home");
+      }
     } catch (err) {
       console.log(err);
     }

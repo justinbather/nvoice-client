@@ -11,6 +11,7 @@ const UserInvoicePage = () => {
   const [total, setTotal] = useState(0);
 
   const { invoiceId } = useParams();
+  console.log(invoiceId);
 
   const fetchInvoice = async () => {
     try {
@@ -34,7 +35,7 @@ const UserInvoicePage = () => {
   return (
     <div className="homepage">
       <UserSideNav />
-      <UserInvoice isUser={true} invoice={invoice} total={total} />
+      {invoice && <UserInvoice isUser={true} invoice={invoice} total={total} />}
     </div>
   );
 };

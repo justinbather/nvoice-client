@@ -9,12 +9,15 @@ const UserOverview = () => {
   const [unpaid, setUnpaid] = useState(null);
   const getUnpaid = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/invoices/unpaid`, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        `${BASE_URL}/invoices/by-status/unpaid`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
       setUnpaid(response.data.invoices);
     } catch (err) {
       console.log(err);
@@ -23,12 +26,13 @@ const UserOverview = () => {
 
   const getPaid = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/invoices/paid`, {
+      const response = await axios.get(`${BASE_URL}/invoices/by-status/paid`, {
         headers: {
           "Content-Type": "application/json",
         },
         withCredentials: true,
       });
+      console.log(response.data.invoices);
       setPaid(response.data.invoices);
     } catch (err) {
       console.log(err);
@@ -48,11 +52,11 @@ const UserOverview = () => {
         <div className="overview__tilelist">
           {unpaid &&
             unpaid.map((item) => (
-              <div className="tile">
+              <div className="tile" key={item._id}>
                 <h3 className="tile__amount">{item.company.name}</h3>
                 <p className="tile__email">{item.company.email}</p>
                 <p className="tile__date">{item.company.phoneNum}</p>
-                <Link to={`/user/invoice/${item._id}`}>
+                <Link to={`/user/invoices/${item._id}`}>
                   <button className="tile__button">More Info</button>
                 </Link>
               </div>
@@ -72,16 +76,19 @@ const UserOverview = () => {
         <h2 className="overview__title">Paid</h2>
         <div className="overview__tilelist">
           {paid &&
-            paid.map((item) => (
-              <div className="tile">
-                <h3 className="tile__amount">{item.company.name}</h3>
-                <p className="tile__email">{item.company.email}</p>
-                <p className="tile__date">{item.company.phoneNum}</p>
-                <Link to={`/user/invoice/${item._id}`}>
-                  <button className="tile__button">More Info</button>
-                </Link>
-              </div>
-            ))}
+            paid.map((item) => {
+              console.log(item);
+              return (
+                <div className="tile" key={item._id}>
+                  <h3 className="tile__amount">{item.company.name}</h3>
+                  <p className="tile__email">{item.company.email}</p>
+                  <p className="tile__date">{item.company.phoneNum}</p>
+                  <Link to={`/user/invoices/${item._id}`}>
+                    <button className="tile__button">More Info</button>
+                  </Link>
+                </div>
+              );
+            })}
         </div>
       </section>
     </div>

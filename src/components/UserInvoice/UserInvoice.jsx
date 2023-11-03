@@ -46,7 +46,7 @@ export const UserInvoice = ({ isUser, invoice, total }) => {
           {invoice.lineItems &&
             invoice.lineItems.map((item) => (
               <div className="invoice-container__line-item">
-                <p>{item.name}</p>
+                <p>{item.itemName}</p>
                 <p>{item.description}</p>
                 <p>{item.quantity}</p>
                 <p>{item.price}</p>

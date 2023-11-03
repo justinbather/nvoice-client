@@ -32,7 +32,10 @@ function App() {
             element={<CreateInvoicePage />}
           />
           <Route path="/company/invoices" />
-          <Route path="/user/invoices/:invoiceId" element={UserInvoicePage} />
+          <Route
+            path="/user/invoices/:invoiceId"
+            element={<UserInvoicePage />}
+          />
         </Routes>
       </BrowserRouter>
     </>
