@@ -7,7 +7,12 @@ import LandingHeader from "./components/LandingHeader/LandingHeader";
 import CompanyHomePage from "./pages/CompanyHomePage/CompanyHomePage";
 import UserHomePage from "./pages/UserHomePage/UserHomePage";
 import { CompanyInvoicePage } from "./pages/CompanyInvoicePage/CompanyInvoicePage";
+
+
+
+  import CreateInvoicePage from "./pages/CreateInvoicePage/CreateInvoicePage";
 import UserInvoicePage from "./pages/UserInvoicePage/UserInvoicePage";
+
 
 function App() {
   return (
@@ -24,8 +29,13 @@ function App() {
             path="/company/invoices/:invoiceId"
             element={<CompanyInvoicePage />}
           />
+
+          
+
+              <Route path="/company/create-invoice" element={<CreateInvoicePage />} />
           <Route path="/company/invoices" />
           <Route path="/user/invoices/:invoiceId" element={UserInvoicePage} />
+
         </Routes>
       </BrowserRouter>
     </>
