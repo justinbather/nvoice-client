@@ -28,7 +28,7 @@ const CompanyLogin = () => {
         }
       );
       if (response.status === 200) {
-        navigate("/user/home");
+        navigate("/company/home");
       }
     } catch (err) {
       console.log("error logging in", err);
