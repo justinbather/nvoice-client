@@ -1,12 +1,14 @@
-import './CreateInvoicePage.scss';
-import CompanySideNav from '../../components/CompanySideNav/CompanySideNav';
+import "./CompanyHomePage.scss";
+import CompanySideNav from "../../components/CompanySideNav/CompanySideNav";
+import { UserInvoice } from "../../components/UserInvoice/UserInvoice";
 
-const CreateInvoicePage = () => {
-    return (
-        <div className='homepage'>
-            <CompanySideNav />
-        </div>
-    );
+const CompanyHomePage = () => {
+  return (
+    <div className="homepage">
+      <CompanySideNav />
+      <UserInvoice />
+    </div>
+  );
 };
 
-export default CreateInvoicePage;
+export default CompanyHomePage;
