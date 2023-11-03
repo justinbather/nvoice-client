@@ -7,7 +7,6 @@ const LandingHeader = () => {
         <header className='header'>
             <nav className='header__nav'>
                 <Link to='/'><h2 className='header__logo'>Nvoice</h2></Link>
-                <button className='header__button'>Sign In</button>
             </nav>
         </header>
     );

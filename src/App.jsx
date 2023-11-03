@@ -1,20 +1,41 @@
-import './App.scss';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import LandingPage from './pages/LandingPage/LandingPage';
-import CompanyLogin from './components/CompanyLogin/CompanyLogin';
-import UserLogin from './components/UserLogin/UserLogin';
-import LandingHeader from './components/LandingHeader/LandingHeader';
+import "./App.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import CompanyLogin from "./components/CompanyLogin/CompanyLogin";
+import UserLogin from "./components/UserLogin/UserLogin";
+import LandingHeader from "./components/LandingHeader/LandingHeader";
+import CompanyHomePage from "./pages/CompanyHomePage/CompanyHomePage";
+import UserHomePage from "./pages/UserHomePage/UserHomePage";
+import { CompanyInvoicePage } from "./pages/CompanyInvoicePage/CompanyInvoicePage";
 
+import CreateInvoicePage from "./pages/CreateInvoicePage/CreateInvoicePage";
+import UserInvoicePage from "./pages/UserInvoicePage/UserInvoicePage";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-      <LandingHeader />
+        <LandingHeader />
         <Routes>
-          <Route path='/' element={<LandingPage />}/>
-          <Route path='/login/business' element={<CompanyLogin />}/>
-          <Route path='/login/customer' element={<UserLogin />}/>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login/company" element={<CompanyLogin />} />
+          <Route path="/login/user" element={<UserLogin />} />
+          <Route path="/company/home" element={<CompanyHomePage />} />
+          <Route path="/user/home" element={<UserHomePage />} />
+          <Route
+            path="/company/invoices/:invoiceId"
+            element={<CompanyInvoicePage />}
+          />
+
+          <Route
+            path="/company/create-invoice"
+            element={<CreateInvoicePage />}
+          />
+          <Route path="/company/invoices" />
+          <Route
+            path="/user/invoices/:invoiceId"
+            element={<UserInvoicePage />}
+          />
         </Routes>
       </BrowserRouter>
     </>
