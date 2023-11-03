@@ -1,6 +1,6 @@
 import "./Landing.scss";
 import { Link } from "react-router-dom";
-import credit from "../../styles/images/credit-cards.png";
+import credit from "../../styles/images/bank-cards-512.png";
 
 const Landing = () => {
 

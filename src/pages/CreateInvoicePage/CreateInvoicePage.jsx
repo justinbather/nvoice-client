@@ -1,7 +1,7 @@
-import './CompanyHomePage.scss';
+import './CreateInvoicePage.scss';
 import CompanySideNav from '../../components/CompanySideNav/CompanySideNav';
 
-const CompanyHomePage = () => {
+const CreateInvoicePage = () => {
     return (
         <div className='homepage'>
             <CompanySideNav />
@@ -9,4 +9,4 @@ const CompanyHomePage = () => {
     );
 };
 
-export default CompanyHomePage;
+export default CreateInvoicePage;

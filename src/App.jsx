@@ -4,8 +4,10 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import CompanyLogin from './components/CompanyLogin/CompanyLogin';
 import UserLogin from './components/UserLogin/UserLogin';
 import LandingHeader from './components/LandingHeader/LandingHeader';
-import CompanyHomePage from './pages/CompanyHome/CompanyHomePage';
-import UserHomePage from './pages/UserHome/UserHomePage';
+import CompanyHomePage from './pages/CompanyHomePage/CompanyHomePage';
+import UserHomePage from './pages/UserHomePage/UserHomePage';
+import CreateInvoicePage from './pages/CreateInvoicePage/CreateInvoicePage';
+import UserInvoicePage from './pages/UserInvoicePage/UserInvoicePage';
 
 
 
@@ -20,6 +22,8 @@ function App() {
           <Route path='/login/user' element={<UserLogin />}/>
           <Route path='/company/home' element={<CompanyHomePage />}/>
           <Route path='/user/home' element={<UserHomePage/>}/>
+          <Route path= 'company/create-invoice' element={<CreateInvoicePage />}/>
+          <Route path= 'user/invoice/:id' element={<UserInvoicePage />}/>
         </Routes>
       </BrowserRouter>
     </>
